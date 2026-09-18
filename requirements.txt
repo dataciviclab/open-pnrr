@@ -1,0 +1,3 @@
+toolkit>=1.50.0
+lab-connectors
+duckdb>=1.0.0

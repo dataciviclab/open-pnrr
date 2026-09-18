@@ -1,0 +1,82 @@
+# PNRR Indicatori Target — Italia Domani
+# Fonte: MEF Italia Domani (ReGiS)
+# Download via preprocess.py (wget + fallback urllib): server AEM/Akamai
+# blocca python-requests ma accetta wget.
+# Per CI serve TOOLKIT_ALLOW_SCRIPT_SOURCE=1.
+root: "../../out"
+schema_version: 1
+
+dataset:
+  name: "pnrr_indicatori_target"
+  source_id: "italiadomani"
+  tags: [finanza-pubblica, pnrr, indicatori, target]
+  category: finanza-pubblica
+  years: [2026]
+  time_coverage:
+    start_year: 2021
+    end_year: 2026
+
+raw:
+  output_policy: overwrite
+  sources:
+    - name: pnrr_indicatori_target
+      type: script
+      args:
+        command: "python preprocess.py raw_input.csv"
+        output: "raw_input.csv"
+        filename: "raw_input.csv"
+      primary: true
+
+clean:
+  read:
+    source: auto
+    mode: latest
+    delim: ";"
+    encoding: "utf-8"
+    header: true
+    decimal: ","
+    sample_size: -1
+  required_columns:
+    - codice_univoco_submisura
+    - descrizione_submisura
+    - cup
+    - codice_locale_progetto
+    - codice_indicatore
+    - descrizione_indicatore
+    - unita_misura
+    - descrizione_unita_misura
+    - descrizione_tipo_indicatore
+    - valore_realizzato
+    - valore_programmato
+    - mese
+    - anno
+    - data_estrazione
+  sql: "sql/clean.sql"
+  validate:
+    min_rows: 200000
+    not_null:
+      - cup
+      - codice_indicatore
+    # primary_key: deroga — un CUP può avere più righe (più indicatori, più periodi)
+
+mart:
+  tables:
+    - name: "mart_avanzamento"
+      sql: "sql/mart_avanzamento.sql"
+    - name: "mart_per_submisura"
+      sql: "sql/mart_per_submisura.sql"
+  required_tables:
+    - mart_avanzamento
+  validate:
+    table_rules:
+      mart_avanzamento:
+        required_columns: [codice_indicatore, descrizione_indicatore, n_cup, n_valori_realizzati, valore_realizzato_totale, valore_programmato_totale, pct_realizzazione]
+        primary_key: [codice_indicatore]
+        min_rows: 50
+      mart_per_submisura:
+        required_columns: [codice_univoco_submisura, descrizione_submisura, n_indicatori, n_cup, pct_realizzazione_medio]
+        primary_key: [codice_univoco_submisura]
+        min_rows: 50
+
+validation:
+  fail_on_error: true

@@ -1,0 +1,21 @@
+SELECT
+    CAST("Programma" AS VARCHAR) AS programma,
+    CAST("Missione" AS VARCHAR) AS missione,
+    CAST("Descrizione Missione" AS VARCHAR) AS descrizione_missione,
+    CAST("Componente" AS VARCHAR) AS componente,
+    CAST("Descrizione Componente" AS VARCHAR) AS descrizione_componente,
+    CAST("ID Misura" AS VARCHAR) AS id_misura,
+    CAST("Codice Univoco Misura" AS VARCHAR) AS codice_univoco_misura,
+    CAST("Descrizione Misura" AS VARCHAR) AS descrizione_misura,
+    CAST("ID Sub-Misura" AS VARCHAR) AS id_submisura,
+    CAST("Codice CID" AS VARCHAR) AS codice_cid,
+    CAST("Codice Univoco Submisura" AS VARCHAR) AS codice_univoco_submisura,
+    CAST("Descrizione Sub-Misura" AS VARCHAR) AS descrizione_submisura,
+    CAST("Tipo Livello" AS VARCHAR) AS tipo_livello,
+    CAST("Investimento/Riforma" AS VARCHAR) AS investimento_riforma,
+    CAST("Prestito o Sovvenzione" AS VARCHAR) AS prestito_sovvenzione,
+    CAST("Amministrazione Titolare" AS VARCHAR) AS amministrazione_titolare,
+    CAST("Importo Totale" AS DOUBLE) AS importo_totale,
+    CAST("Importo Progetti in essere" AS DOUBLE) AS importo_progetti_in_essere,
+    CAST("Importo Progetti nuovi" AS DOUBLE) AS importo_progetti_nuovi
+FROM raw_input

@@ -1,0 +1,11 @@
+# Output pipeline (non committare)
+out/
+.tmp/
+
+# Batch file generato da make run-all
+batch.txt
+
+# Python
+__pycache__/
+*.pyc
+datasets/civic-graph-pnrr/
