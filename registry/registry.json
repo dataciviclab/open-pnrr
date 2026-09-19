@@ -1,0 +1,2037 @@
+{
+  "schema_version": 1,
+  "repo": "open-pnrr",
+  "source_repo": "open-pnrr",
+  "updated_at": "2026-09-19",
+  "datasets": [
+    {
+      "slug": "pnrr_avanzamento_indicatori",
+      "name": "Pnrr Avanzamento Indicatori",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2021,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "indicatori",
+        "milestones",
+        "target"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "missione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_missione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "componente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_componente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "id_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_univoco_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "id_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_cid",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "amministrazione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_indicatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "indicatore_code"
+        },
+        {
+          "name": "descrizione_indicatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "unita_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "anno",
+          "type": "INTEGER",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "year"
+        },
+        {
+          "name": "semestre",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "valore_indicatore",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "valore_stimato",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "valore_non_disponibile",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_estrazione",
+          "type": "TIMESTAMP",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "anno_estrazione",
+          "type": "INTEGER",
+          "role": "metric",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_avanzamento_indicatori/2026/pnrr_avanzamento_indicatori_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_avanzamento_indicatori__mart_per_missione",
+        "pnrr_avanzamento_indicatori__mart_per_submisura"
+      ]
+    },
+    {
+      "slug": "pnrr_gare",
+      "name": "Pnrr Gare",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2016,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "appalti",
+        "gare"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "descrizione_procedura_aggiudicazione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "cup_code"
+        },
+        {
+          "name": "codice_locale_progetto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cig",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "cig_code"
+        },
+        {
+          "name": "cig_accordo_quadro",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "cig_code"
+        },
+        {
+          "name": "codice_procedura_utente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "modalita_realizzazione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_interno_pda",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "oggetto_principale_contratto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "oggetto_gara",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_pubblicazione_cig",
+          "type": "TIMESTAMP",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "codice_motivo_assenza_cig",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_motivo_assenza_cig",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "importo_complessivo_gara",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "importo_aggiudicazione",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "data_aggiudicazione_definitiva",
+          "type": "TIMESTAMP",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "data_estrazione",
+          "type": "TIMESTAMP",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "anno_estrazione",
+          "type": "INTEGER",
+          "role": "metric",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_gare/2026/pnrr_gare_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_gare__mart_submisura",
+        "pnrr_gare__mart_procedura"
+      ]
+    },
+    {
+      "slug": "pnrr_indicatori_target",
+      "name": "Pnrr Indicatori Target",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2021,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "indicatori",
+        "target"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "cup",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "cup_code"
+        },
+        {
+          "name": "codice_locale_progetto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_indicatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "indicatore_code"
+        },
+        {
+          "name": "descrizione_indicatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "unita_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_unita_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_tipo_indicatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "valore_realizzato",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "valore_programmato",
+          "type": "DOUBLE",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "target_value"
+        },
+        {
+          "name": "mese",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "month"
+        },
+        {
+          "name": "anno",
+          "type": "INTEGER",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "year"
+        },
+        {
+          "name": "data_estrazione",
+          "type": "TIMESTAMP",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "anno_estrazione",
+          "type": "INTEGER",
+          "role": "metric",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_indicatori_target/2026/pnrr_indicatori_target_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_indicatori_target__mart_avanzamento",
+        "pnrr_indicatori_target__mart_per_submisura"
+      ]
+    },
+    {
+      "slug": "pnrr_pagamenti",
+      "name": "Pnrr Pagamenti",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2021,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "pagamenti",
+        "rendicontazione"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "cup",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "cup_code"
+        },
+        {
+          "name": "codice_locale_progetto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "finanziamento_totale",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "finanziamento_pnrr",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_totale",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_pnrr",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_stato",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_stato_bilancio",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_stato_foi",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_fpop",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_ue",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_regione",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_provincia",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_comune",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_altro_pubblico",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_privato",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_da_reperire",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_pnc",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "pagamento_altri_fondi",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "data_estrazione",
+          "type": "TIMESTAMP",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "anno_estrazione",
+          "type": "INTEGER",
+          "role": "metric",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_pagamenti/2026/pnrr_pagamenti_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_pagamenti__mart_submisura",
+        "pnrr_pagamenti__mart_sintesi"
+      ]
+    },
+    {
+      "slug": "pnrr_progetti",
+      "name": "Pnrr Progetti",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2021,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "progetti"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "programma",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "programma_code"
+        },
+        {
+          "name": "missione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_missione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "componente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_componente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "id_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_univoco_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "id_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_cid",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "amministrazione_titolare",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_procedura_attivazione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "titolo_procedura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "tipologia_procedura_attivazione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "cup_code"
+        },
+        {
+          "name": "codice_locale_progetto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "stato_cup",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_codice_natura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_descrizione_natura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_codice_tipologia",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_descrizione_tipologia",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_codice_settore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_descrizione_settore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_codice_sottosettore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_descrizione_sottosettore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_codice_categoria",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cup_descrizione_categoria",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "titolo_progetto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "sintesi_progetto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_tipo_aiuto",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "fin_stato",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_stato_bilancio",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_stato_foi",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_fpop",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_ue",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_regione",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_provincia",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_comune",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_altro_pubblico",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_privato",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_da_reperire",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_pnrr",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_pnc",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "altri_fondi",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_totale",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_totale_pubblico",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "fin_totale_pubblico_netto",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "soggetto_attuatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "cf_soggetto_attuatore",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "fiscal_code"
+        },
+        {
+          "name": "flag_progetti_in_essere",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_inizio_prevista",
+          "type": "DATE",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_inizio_effettiva",
+          "type": "DATE",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_fine_prevista",
+          "type": "DATE",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_fine_effettiva",
+          "type": "DATE",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_estrazione",
+          "type": "DATE",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "data_ultima_validazione",
+          "type": "DATE",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "esito_validazione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_fase_iter",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_fase_iter",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "stato_fase_iter",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "stato_avanzamento",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_progetti/2026/pnrr_progetti_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_progetti__mart_missione",
+        "pnrr_progetti__mart_stato_avanzamento"
+      ]
+    },
+    {
+      "slug": "pnrr_quadro_finanziario",
+      "name": "Pnrr Quadro Finanziario",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2021,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "programmazione",
+        "misure"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "programma",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "programma_code"
+        },
+        {
+          "name": "missione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_missione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "componente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_componente",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "id_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_univoco_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "id_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_cid",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "tipo_livello",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "investimento_riforma",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "prestito_sovvenzione",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "amministrazione_titolare",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "importo_totale",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "importo_progetti_in_essere",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "importo_progetti_nuovi",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_quadro_finanziario/2026/pnrr_quadro_finanziario_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_quadro_finanziario__mart_per_missione",
+        "pnrr_quadro_finanziario__mart_sintesi"
+      ]
+    },
+    {
+      "slug": "pnrr_tag_clima_digitale",
+      "name": "Pnrr Tag Clima Digitale",
+      "description": "",
+      "source": "",
+      "source_id": "italiadomani",
+      "period": {
+        "start": 2021,
+        "end": 2026
+      },
+      "tags": [
+        "finanza-pubblica",
+        "pnrr",
+        "clima",
+        "digitale",
+        "tag"
+      ],
+      "category": "finanza-pubblica",
+      "columns": [
+        {
+          "name": "descrizione_misura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "id_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_cid",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "codice_univoco_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "descrizione_submisura",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": "",
+          "semantic_type": "obiettivo_code"
+        },
+        {
+          "name": "tipo_intervento",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "investimento_riforma",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "sovvenzione_prestito",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "amministrazione_titolare",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "importo_campo_intervento",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "campo_intervento_clima",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "coeff_clima",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "campo_intervento_digitale",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "coeff_digitale",
+          "type": "VARCHAR",
+          "role": "dimension",
+          "description": ""
+        },
+        {
+          "name": "importo_clima",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        },
+        {
+          "name": "importo_digitale",
+          "type": "DOUBLE",
+          "role": "metric",
+          "description": ""
+        }
+      ],
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-clean/open-pnrr/pnrr_tag_clima_digitale/2026/pnrr_tag_clima_digitale_2026_clean.parquet",
+        "multi_file": false
+      },
+      "stage": "incubating",
+      "mart_refs": [
+        "pnrr_tag_clima_digitale__mart_sintesi"
+      ]
+    }
+  ],
+  "marts": [
+    {
+      "slug": "pnrr_avanzamento_indicatori__mart_per_missione",
+      "dataset": "pnrr_avanzamento_indicatori",
+      "table": "mart_per_missione",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_avanzamento_indicatori/2026/mart_per_missione.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_avanzamento_indicatori__mart_per_submisura",
+      "dataset": "pnrr_avanzamento_indicatori",
+      "table": "mart_per_submisura",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_avanzamento_indicatori/2026/mart_per_submisura.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_gare__mart_procedura",
+      "dataset": "pnrr_gare",
+      "table": "mart_procedura",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_gare/2026/mart_procedura.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_gare__mart_submisura",
+      "dataset": "pnrr_gare",
+      "table": "mart_submisura",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_gare/2026/mart_submisura.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_indicatori_target__mart_avanzamento",
+      "dataset": "pnrr_indicatori_target",
+      "table": "mart_avanzamento",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_indicatori_target/2026/mart_avanzamento.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_indicatori_target__mart_per_submisura",
+      "dataset": "pnrr_indicatori_target",
+      "table": "mart_per_submisura",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_indicatori_target/2026/mart_per_submisura.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_pagamenti__mart_sintesi",
+      "dataset": "pnrr_pagamenti",
+      "table": "mart_sintesi",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_pagamenti/2026/mart_sintesi.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_pagamenti__mart_submisura",
+      "dataset": "pnrr_pagamenti",
+      "table": "mart_submisura",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_pagamenti/2026/mart_submisura.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_progetti__mart_missione",
+      "dataset": "pnrr_progetti",
+      "table": "mart_missione",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_progetti/2026/mart_missione.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_progetti__mart_stato_avanzamento",
+      "dataset": "pnrr_progetti",
+      "table": "mart_stato_avanzamento",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_progetti/2026/mart_stato_avanzamento.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_quadro_finanziario__mart_per_missione",
+      "dataset": "pnrr_quadro_finanziario",
+      "table": "mart_per_missione",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_quadro_finanziario/2026/mart_per_missione.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_quadro_finanziario__mart_sintesi",
+      "dataset": "pnrr_quadro_finanziario",
+      "table": "mart_sintesi",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_quadro_finanziario/2026/mart_sintesi.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pnrr_tag_clima_digitale__mart_sintesi",
+      "dataset": "pnrr_tag_clima_digitale",
+      "table": "mart_sintesi",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pnrr_tag_clima_digitale/2026/mart_sintesi.parquet",
+        "multi_file": false
+      }
+    }
+  ],
+  "signals": [
+    {
+      "id": "pnrr_avanzamento_indicatori",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_avanzamento_indicatori",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T215951Z_15c6e435",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 6263,
+          "clean": 6030,
+          "mart": 157
+        },
+        "output_bytes": {
+          "raw": 2768412,
+          "clean": 35050,
+          "mart": 8153
+        },
+        "started_at": "2026-09-18T21:59:51.363578+00:00",
+        "finished_at": "2026-09-18T22:00:04.068895+00:00",
+        "duration_seconds": 12.705
+      }
+    },
+    {
+      "id": "pnrr_gare",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_gare",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T220542Z_6bd03aa4",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 282655,
+          "clean": 282655,
+          "mart": 227
+        },
+        "output_bytes": {
+          "raw": 111336940,
+          "clean": 14173379,
+          "mart": 14213
+        },
+        "started_at": "2026-09-18T22:05:42.927091+00:00",
+        "finished_at": "2026-09-18T22:06:01.313618+00:00",
+        "duration_seconds": 18.387
+      }
+    },
+    {
+      "id": "pnrr_indicatori_target",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_indicatori_target",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T214804Z_de7e705f",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 357183,
+          "clean": 357183,
+          "mart": 509
+        },
+        "output_bytes": {
+          "raw": 80151898,
+          "clean": 3656607,
+          "mart": 20570
+        },
+        "started_at": "2026-09-18T21:48:04.533908+00:00",
+        "finished_at": "2026-09-18T21:48:17.098999+00:00",
+        "duration_seconds": 12.565
+      }
+    },
+    {
+      "id": "pnrr_pagamenti",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_pagamenti",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T220545Z_7987bb3e",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 211901,
+          "clean": 211901,
+          "mart": 214
+        },
+        "output_bytes": {
+          "raw": 40484686,
+          "clean": 4615369,
+          "mart": 14382
+        },
+        "started_at": "2026-09-18T22:05:45.557811+00:00",
+        "finished_at": "2026-09-18T22:05:59.337345+00:00",
+        "duration_seconds": 13.78
+      }
+    },
+    {
+      "id": "pnrr_progetti",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_progetti",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T220539Z_5cc63bc3",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 291398,
+          "clean": 291398,
+          "mart": 22
+        },
+        "output_bytes": {
+          "raw": 317081316,
+          "clean": 17138327,
+          "mart": 4123
+        },
+        "started_at": "2026-09-18T22:05:39.614067+00:00",
+        "finished_at": "2026-09-18T22:06:18.738737+00:00",
+        "duration_seconds": 39.125
+      }
+    },
+    {
+      "id": "pnrr_quadro_finanziario",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_quadro_finanziario",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T214838Z_976548b2",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 304,
+          "clean": 304,
+          "mart": 8
+        },
+        "output_bytes": {
+          "raw": 113920,
+          "clean": 25888,
+          "mart": 2332
+        },
+        "started_at": "2026-09-18T21:48:38.533708+00:00",
+        "finished_at": "2026-09-18T21:48:41.879646+00:00",
+        "duration_seconds": 3.346
+      }
+    },
+    {
+      "id": "pnrr_tag_clima_digitale",
+      "source_id": "italiadomani",
+      "status": "ok",
+      "label": "pnrr_tag_clima_digitale",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20260918T215953Z_02af5f44",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "raw": 100,
+          "clean": 100,
+          "mart": 100
+        },
+        "output_rows": {
+          "raw": 375,
+          "clean": 375,
+          "mart": 1
+        },
+        "output_bytes": {
+          "raw": 143158,
+          "clean": 30822,
+          "mart": 946
+        },
+        "started_at": "2026-09-18T21:59:53.721445+00:00",
+        "finished_at": "2026-09-18T22:00:03.681116+00:00",
+        "duration_seconds": 9.96
+      }
+    }
+  ],
+  "codelists": [],
+  "entities": {
+    "entities": {
+      "Ente (o Impresa)": {
+        "entity": "Ente (o Impresa)",
+        "label": "Ente (o Impresa)",
+        "datasets": [
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "cf_soggetto_attuatore",
+            "semantic_type": "fiscal_code"
+          }
+        ],
+        "types": {
+          "fiscal_code": 1
+        }
+      },
+      "Gara": {
+        "entity": "Gara",
+        "label": "Gara / Appalto",
+        "datasets": [
+          {
+            "slug": "pnrr_gare",
+            "name": "Pnrr Gare",
+            "column": "cig",
+            "semantic_type": "cig_code"
+          },
+          {
+            "slug": "pnrr_gare",
+            "name": "Pnrr Gare",
+            "column": "cig_accordo_quadro",
+            "semantic_type": "cig_code"
+          }
+        ],
+        "types": {
+          "cig_code": 2
+        }
+      },
+      "Indicatore": {
+        "entity": "Indicatore",
+        "label": "Indicatore",
+        "datasets": [
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "codice_indicatore",
+            "semantic_type": "indicatore_code"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "codice_indicatore",
+            "semantic_type": "indicatore_code"
+          }
+        ],
+        "types": {
+          "indicatore_code": 2
+        }
+      },
+      "Obiettivo": {
+        "entity": "Obiettivo",
+        "label": "Obiettivo",
+        "datasets": [
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "descrizione_missione",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_gare",
+            "name": "Pnrr Gare",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_pagamenti",
+            "name": "Pnrr Pagamenti",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "descrizione_missione",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "descrizione_missione",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_tag_clima_digitale",
+            "name": "Pnrr Tag Clima Digitale",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_tag_clima_digitale",
+            "name": "Pnrr Tag Clima Digitale",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          }
+        ],
+        "types": {
+          "obiettivo_code": 14
+        }
+      },
+      "Progetto": {
+        "entity": "Progetto",
+        "label": "Progetto",
+        "datasets": [
+          {
+            "slug": "pnrr_gare",
+            "name": "Pnrr Gare",
+            "column": "cup",
+            "semantic_type": "cup_code"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "cup",
+            "semantic_type": "cup_code"
+          },
+          {
+            "slug": "pnrr_pagamenti",
+            "name": "Pnrr Pagamenti",
+            "column": "cup",
+            "semantic_type": "cup_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "cup",
+            "semantic_type": "cup_code"
+          }
+        ],
+        "types": {
+          "cup_code": 4
+        }
+      },
+      "Programma": {
+        "entity": "Programma",
+        "label": "Programma",
+        "datasets": [
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "programma",
+            "semantic_type": "programma_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "programma",
+            "semantic_type": "programma_code"
+          }
+        ],
+        "types": {
+          "programma_code": 2
+        }
+      },
+      "Target": {
+        "entity": "Target",
+        "label": "Target",
+        "datasets": [
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "valore_programmato",
+            "semantic_type": "target_value"
+          }
+        ],
+        "types": {
+          "target_value": 1
+        }
+      },
+      "Tempo": {
+        "entity": "Tempo",
+        "label": "Tempo / data",
+        "datasets": [
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "anno",
+            "semantic_type": "year"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "mese",
+            "semantic_type": "month"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "anno",
+            "semantic_type": "year"
+          }
+        ],
+        "types": {
+          "year": 2,
+          "month": 1
+        }
+      }
+    },
+    "bridges": [
+      {
+        "from": {
+          "entity": "Indicatore",
+          "dataset": "pnrr_avanzamento_indicatori",
+          "via": "indicatore_code"
+        },
+        "to": {
+          "entity": "Progetto",
+          "bridge": "pnrr_indicatori_target",
+          "on": "cup",
+          "semantic_type": "cup_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Progetto",
+          "dataset": "pnrr_gare",
+          "via": "cup_code"
+        },
+        "to": {
+          "entity": "Comune",
+          "bridge": "anac_cup",
+          "on": "cup",
+          "semantic_type": "municipality_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Gara",
+          "dataset": "pnrr_gare",
+          "via": "cig_code"
+        },
+        "to": {
+          "entity": "Comune",
+          "bridge": "anac_bandi_gara",
+          "on": "cig",
+          "semantic_type": "municipality_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Progetto",
+          "dataset": "pnrr_indicatori_target",
+          "via": "cup_code"
+        },
+        "to": {
+          "entity": "Comune",
+          "bridge": "anac_cup",
+          "on": "cup",
+          "semantic_type": "municipality_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Indicatore",
+          "dataset": "pnrr_indicatori_target",
+          "via": "indicatore_code"
+        },
+        "to": {
+          "entity": "Progetto",
+          "bridge": "pnrr_indicatori_target",
+          "on": "cup",
+          "semantic_type": "cup_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Progetto",
+          "dataset": "pnrr_pagamenti",
+          "via": "cup_code"
+        },
+        "to": {
+          "entity": "Comune",
+          "bridge": "anac_cup",
+          "on": "cup",
+          "semantic_type": "municipality_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Programma",
+          "dataset": "pnrr_progetti",
+          "via": "programma_code"
+        },
+        "to": {
+          "entity": "Progetto",
+          "bridge": "opencoesione_progetti_esteso",
+          "on": "CUP",
+          "semantic_type": "cup_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Progetto",
+          "dataset": "pnrr_progetti",
+          "via": "cup_code"
+        },
+        "to": {
+          "entity": "Comune",
+          "bridge": "anac_cup",
+          "on": "cup",
+          "semantic_type": "municipality_code"
+        }
+      },
+      {
+        "from": {
+          "entity": "Programma",
+          "dataset": "pnrr_quadro_finanziario",
+          "via": "programma_code"
+        },
+        "to": {
+          "entity": "Progetto",
+          "bridge": "opencoesione_progetti_esteso",
+          "on": "CUP",
+          "semantic_type": "cup_code"
+        }
+      }
+    ]
+  }
+}

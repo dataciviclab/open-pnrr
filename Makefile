@@ -21,8 +21,8 @@ run-all:
 clean:
 	rm -rf out/data/_runs out/data/probe out/data/raw out/data/clean out/data/mart out/data/cross .tmp/
 
-registry:
-	$(TOOLKIT) registry build --prefix dataciviclab
+registry-write:
+	$(TOOLKIT) registry build --prefix open-pnrr --write
 
 help:
 	@grep -E '^[a-zA-Z_-]+:' Makefile | sort
