@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repo": "open-pnrr",
-  "source_repo": "open-pnrr",
+  "source_repo": "dataciviclab/open-pnrr",
   "updated_at": "2026-09-19",
   "datasets": [
     {
@@ -410,7 +410,7 @@
         {
           "name": "valore_programmato",
           "type": "DOUBLE",
-          "role": "dimension",
+          "role": "metric",
           "description": "",
           "semantic_type": "target_value"
         },
@@ -1453,7 +1453,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T215951Z_15c6e435",
+        "run_id": "20260919T131001Z_ceaba17a",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1469,11 +1469,11 @@
         "output_bytes": {
           "raw": 2768412,
           "clean": 35050,
-          "mart": 8153
+          "mart": 8106
         },
-        "started_at": "2026-09-18T21:59:51.363578+00:00",
-        "finished_at": "2026-09-18T22:00:04.068895+00:00",
-        "duration_seconds": 12.705
+        "started_at": "2026-09-19T13:10:01.938114+00:00",
+        "finished_at": "2026-09-19T13:10:04.822839+00:00",
+        "duration_seconds": 2.885
       }
     },
     {
@@ -1484,7 +1484,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T220542Z_6bd03aa4",
+        "run_id": "20260919T131004Z_22ec3a05",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1500,11 +1500,11 @@
         "output_bytes": {
           "raw": 111336940,
           "clean": 14173379,
-          "mart": 14213
+          "mart": 14218
         },
-        "started_at": "2026-09-18T22:05:42.927091+00:00",
-        "finished_at": "2026-09-18T22:06:01.313618+00:00",
-        "duration_seconds": 18.387
+        "started_at": "2026-09-19T13:10:04.896189+00:00",
+        "finished_at": "2026-09-19T13:10:12.336563+00:00",
+        "duration_seconds": 7.44
       }
     },
     {
@@ -1515,7 +1515,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T214804Z_de7e705f",
+        "run_id": "20260919T131012Z_0156d9d9",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1530,12 +1530,12 @@
         },
         "output_bytes": {
           "raw": 80151898,
-          "clean": 3656607,
-          "mart": 20570
+          "clean": 3657351,
+          "mart": 20347
         },
-        "started_at": "2026-09-18T21:48:04.533908+00:00",
-        "finished_at": "2026-09-18T21:48:17.098999+00:00",
-        "duration_seconds": 12.565
+        "started_at": "2026-09-19T13:10:12.407144+00:00",
+        "finished_at": "2026-09-19T13:10:19.239814+00:00",
+        "duration_seconds": 6.833
       }
     },
     {
@@ -1546,7 +1546,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T220545Z_7987bb3e",
+        "run_id": "20260919T131019Z_15628d79",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1562,11 +1562,11 @@
         "output_bytes": {
           "raw": 40484686,
           "clean": 4615369,
-          "mart": 14382
+          "mart": 14327
         },
-        "started_at": "2026-09-18T22:05:45.557811+00:00",
-        "finished_at": "2026-09-18T22:05:59.337345+00:00",
-        "duration_seconds": 13.78
+        "started_at": "2026-09-19T13:10:19.313399+00:00",
+        "finished_at": "2026-09-19T13:10:24.762638+00:00",
+        "duration_seconds": 5.449
       }
     },
     {
@@ -1577,7 +1577,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T220539Z_5cc63bc3",
+        "run_id": "20260919T131024Z_dd13da6a",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1593,11 +1593,11 @@
         "output_bytes": {
           "raw": 317081316,
           "clean": 17138327,
-          "mart": 4123
+          "mart": 4127
         },
-        "started_at": "2026-09-18T22:05:39.614067+00:00",
-        "finished_at": "2026-09-18T22:06:18.738737+00:00",
-        "duration_seconds": 39.125
+        "started_at": "2026-09-19T13:10:24.841356+00:00",
+        "finished_at": "2026-09-19T13:10:45.534107+00:00",
+        "duration_seconds": 20.693
       }
     },
     {
@@ -1608,7 +1608,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T214838Z_976548b2",
+        "run_id": "20260919T131045Z_cd0468ea",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1624,11 +1624,11 @@
         "output_bytes": {
           "raw": 113920,
           "clean": 25888,
-          "mart": 2332
+          "mart": 2330
         },
-        "started_at": "2026-09-18T21:48:38.533708+00:00",
-        "finished_at": "2026-09-18T21:48:41.879646+00:00",
-        "duration_seconds": 3.346
+        "started_at": "2026-09-19T13:10:45.610540+00:00",
+        "finished_at": "2026-09-19T13:10:47.296540+00:00",
+        "duration_seconds": 1.686
       }
     },
     {
@@ -1639,7 +1639,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20260918T215953Z_02af5f44",
+        "run_id": "20260919T131047Z_322a81a1",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1657,9 +1657,9 @@
           "clean": 30822,
           "mart": 946
         },
-        "started_at": "2026-09-18T21:59:53.721445+00:00",
-        "finished_at": "2026-09-18T22:00:03.681116+00:00",
-        "duration_seconds": 9.96
+        "started_at": "2026-09-19T13:10:47.366115+00:00",
+        "finished_at": "2026-09-19T13:10:48.321304+00:00",
+        "duration_seconds": 0.955
       }
     }
   ],
@@ -1702,120 +1702,6 @@
           "cig_code": 2
         }
       },
-      "Indicatore": {
-        "entity": "Indicatore",
-        "label": "Indicatore",
-        "datasets": [
-          {
-            "slug": "pnrr_avanzamento_indicatori",
-            "name": "Pnrr Avanzamento Indicatori",
-            "column": "codice_indicatore",
-            "semantic_type": "indicatore_code"
-          },
-          {
-            "slug": "pnrr_indicatori_target",
-            "name": "Pnrr Indicatori Target",
-            "column": "codice_indicatore",
-            "semantic_type": "indicatore_code"
-          }
-        ],
-        "types": {
-          "indicatore_code": 2
-        }
-      },
-      "Obiettivo": {
-        "entity": "Obiettivo",
-        "label": "Obiettivo",
-        "datasets": [
-          {
-            "slug": "pnrr_avanzamento_indicatori",
-            "name": "Pnrr Avanzamento Indicatori",
-            "column": "descrizione_missione",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_avanzamento_indicatori",
-            "name": "Pnrr Avanzamento Indicatori",
-            "column": "descrizione_misura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_avanzamento_indicatori",
-            "name": "Pnrr Avanzamento Indicatori",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_gare",
-            "name": "Pnrr Gare",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_indicatori_target",
-            "name": "Pnrr Indicatori Target",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_pagamenti",
-            "name": "Pnrr Pagamenti",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_progetti",
-            "name": "Pnrr Progetti",
-            "column": "descrizione_missione",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_progetti",
-            "name": "Pnrr Progetti",
-            "column": "descrizione_misura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_progetti",
-            "name": "Pnrr Progetti",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_quadro_finanziario",
-            "name": "Pnrr Quadro Finanziario",
-            "column": "descrizione_missione",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_quadro_finanziario",
-            "name": "Pnrr Quadro Finanziario",
-            "column": "descrizione_misura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_quadro_finanziario",
-            "name": "Pnrr Quadro Finanziario",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_tag_clima_digitale",
-            "name": "Pnrr Tag Clima Digitale",
-            "column": "descrizione_misura",
-            "semantic_type": "obiettivo_code"
-          },
-          {
-            "slug": "pnrr_tag_clima_digitale",
-            "name": "Pnrr Tag Clima Digitale",
-            "column": "descrizione_submisura",
-            "semantic_type": "obiettivo_code"
-          }
-        ],
-        "types": {
-          "obiettivo_code": 14
-        }
-      },
       "Progetto": {
         "entity": "Progetto",
         "label": "Progetto",
@@ -1849,10 +1735,64 @@
           "cup_code": 4
         }
       },
-      "Programma": {
-        "entity": "Programma",
-        "label": "Programma",
+      "Sconosciuto": {
+        "entity": "Sconosciuto",
+        "label": "Sconosciuto",
         "datasets": [
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "descrizione_missione",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "codice_indicatore",
+            "semantic_type": "indicatore_code"
+          },
+          {
+            "slug": "pnrr_gare",
+            "name": "Pnrr Gare",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "codice_indicatore",
+            "semantic_type": "indicatore_code"
+          },
+          {
+            "slug": "pnrr_indicatori_target",
+            "name": "Pnrr Indicatori Target",
+            "column": "valore_programmato",
+            "semantic_type": "target_value"
+          },
+          {
+            "slug": "pnrr_pagamenti",
+            "name": "Pnrr Pagamenti",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
           {
             "slug": "pnrr_progetti",
             "name": "Pnrr Progetti",
@@ -1860,29 +1800,65 @@
             "semantic_type": "programma_code"
           },
           {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "descrizione_missione",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
             "slug": "pnrr_quadro_finanziario",
             "name": "Pnrr Quadro Finanziario",
             "column": "programma",
             "semantic_type": "programma_code"
-          }
-        ],
-        "types": {
-          "programma_code": 2
-        }
-      },
-      "Target": {
-        "entity": "Target",
-        "label": "Target",
-        "datasets": [
+          },
           {
-            "slug": "pnrr_indicatori_target",
-            "name": "Pnrr Indicatori Target",
-            "column": "valore_programmato",
-            "semantic_type": "target_value"
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "descrizione_missione",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_tag_clima_digitale",
+            "name": "Pnrr Tag Clima Digitale",
+            "column": "descrizione_misura",
+            "semantic_type": "obiettivo_code"
+          },
+          {
+            "slug": "pnrr_tag_clima_digitale",
+            "name": "Pnrr Tag Clima Digitale",
+            "column": "descrizione_submisura",
+            "semantic_type": "obiettivo_code"
           }
         ],
         "types": {
-          "target_value": 1
+          "obiettivo_code": 14,
+          "indicatore_code": 2,
+          "target_value": 1,
+          "programma_code": 2
         }
       },
       "Tempo": {
@@ -1915,19 +1891,6 @@
       }
     },
     "bridges": [
-      {
-        "from": {
-          "entity": "Indicatore",
-          "dataset": "pnrr_avanzamento_indicatori",
-          "via": "indicatore_code"
-        },
-        "to": {
-          "entity": "Progetto",
-          "bridge": "pnrr_indicatori_target",
-          "on": "cup",
-          "semantic_type": "cup_code"
-        }
-      },
       {
         "from": {
           "entity": "Progetto",
@@ -1969,19 +1932,6 @@
       },
       {
         "from": {
-          "entity": "Indicatore",
-          "dataset": "pnrr_indicatori_target",
-          "via": "indicatore_code"
-        },
-        "to": {
-          "entity": "Progetto",
-          "bridge": "pnrr_indicatori_target",
-          "on": "cup",
-          "semantic_type": "cup_code"
-        }
-      },
-      {
-        "from": {
           "entity": "Progetto",
           "dataset": "pnrr_pagamenti",
           "via": "cup_code"
@@ -1995,19 +1945,6 @@
       },
       {
         "from": {
-          "entity": "Programma",
-          "dataset": "pnrr_progetti",
-          "via": "programma_code"
-        },
-        "to": {
-          "entity": "Progetto",
-          "bridge": "opencoesione_progetti_esteso",
-          "on": "CUP",
-          "semantic_type": "cup_code"
-        }
-      },
-      {
-        "from": {
           "entity": "Progetto",
           "dataset": "pnrr_progetti",
           "via": "cup_code"
@@ -2017,19 +1954,6 @@
           "bridge": "anac_cup",
           "on": "cup",
           "semantic_type": "municipality_code"
-        }
-      },
-      {
-        "from": {
-          "entity": "Programma",
-          "dataset": "pnrr_quadro_finanziario",
-          "via": "programma_code"
-        },
-        "to": {
-          "entity": "Progetto",
-          "bridge": "opencoesione_progetti_esteso",
-          "on": "CUP",
-          "semantic_type": "cup_code"
         }
       }
     ]
