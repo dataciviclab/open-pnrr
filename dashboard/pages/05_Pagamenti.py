@@ -54,18 +54,18 @@ else:
     y_col = "fin_pnrr_display"
     y_label = "Fin. PNRR (mln €)"
 
-# Trunca nomi lunghi per il grafico
+# Raggruppa per nome troncato (evita barre duplicate con nomi simili)
 sub_chart = sub_display.copy()
 sub_chart["submisura_short"] = sub_chart["descrizione_submisura"].apply(
-    lambda x: x[:40] + "..." if len(str(x)) > 40 else x
+    lambda x: x[:35] + "..." if len(str(x)) > 35 else x
 )
-# Inverti per Plotly (mostra il più alto in alto)
-sub_chart = sub_chart.iloc[::-1]
-# Inverti per Plotly (mostra il più alto in alto)
-sub_chart = sub_chart.iloc[::-1]
+sub_chart = sub_chart.groupby("submisura_short", as_index=False).agg({
+    y_col: "sum", "n_progetti": "sum"
+})
+sub_chart = sub_chart.sort_values(y_col, ascending=True)
 
 fig = px.bar(sub_chart, x=y_col, y="submisura_short", orientation="h",
-             hover_data=["n_progetti", "tasso_pct"],
+             hover_data=["n_progetti"],
              labels={y_col: y_label, "submisura_short": "Submisura"})
 fig.update_layout(height=max(400, len(sub_chart) * 30), yaxis_title="",
                   xaxis_title=y_label, margin={"l": 350})
