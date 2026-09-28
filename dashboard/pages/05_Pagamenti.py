@@ -54,11 +54,14 @@ else:
     y_col = "fin_pnrr_display"
     y_label = "Fin. PNRR (mln €)"
 
-# Trunca nomi lunghi per il grafico
+# Trunca nomi lunghi e raggruppa per nome corto
 sub_chart = sub_display.copy()
 sub_chart["submisura_short"] = sub_chart["descrizione_submisura"].apply(
-    lambda x: x[:40] + "..." if len(str(x)) > 40 else x
+    lambda x: x[:35] + "..." if len(str(x)) > 35 else x
 )
+sub_chart = sub_chart.groupby("submisura_short", as_index=False).agg({
+    y_col: "sum", "n_progetti": "sum", "tasso_pct": "mean"
+})
 # Inverti per Plotly (mostra il più alto in alto)
 sub_chart = sub_chart.iloc[::-1]
 
