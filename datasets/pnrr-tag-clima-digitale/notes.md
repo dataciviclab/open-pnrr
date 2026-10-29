@@ -10,7 +10,7 @@
 
 ## Download (AEM/Akamai)
 
-Pattern identico ai dataset pnrr_* esistenti.
+`http_file` con client UA browser; in CI fallback proxy `BLOCKED_SOURCE_PROXY`.
 
 ## Formato
 

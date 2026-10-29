@@ -10,10 +10,10 @@
 
 ## Download (AEM/Akamai)
 
-Il server AEM/Akamai blocca python-requests ma **accetta wget** (pattern
-verificato per pnrr-progetti/pnrr-gare/pnrr-pagamenti).
-- `preprocess.py`: wget con User-Agent browser, fallback su urllib.
-- Per CI: `TOOLKIT_ALLOW_SCRIPT_SOURCE=1` (guardrail di sicurezza).
+Il server AEM/Akamai richiede UA browser e, in CI, il fallback proxy.
+- `dataset.yml` con `type: http_file` + `client.user_agent` browser.
+- In CI: `BLOCKED_SOURCE_PROXY` per il fallback proxy.
+- Il preflight usa il Range GET se HEAD fallisce.
 
 ## Formato
 
