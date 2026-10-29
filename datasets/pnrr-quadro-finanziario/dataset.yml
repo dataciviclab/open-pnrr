@@ -1,8 +1,7 @@
 # PNRR Quadro Finanziario — Italia Domani
 # Fonte: MEF Italia Domani
-# Download via preprocess.py (wget + fallback urllib): server AEM/Akamai
-# blocca python-requests ma accetta wget.
-# Per CI serve TOOLKIT_ALLOW_SCRIPT_SOURCE=1.
+# Download via `http_file` (toolkit): UA browser; in CI fallback proxy
+# BLOCKED_SOURCE_PROXY per il filtro AEM/Akamai.
 root: "../../out"
 schema_version: 1
 
@@ -20,10 +19,13 @@ raw:
   output_policy: overwrite
   sources:
     - name: pnrr_quadro_finanziario
-      type: script
+      type: http_file
+      client:
+        timeout: 300
+        retries: 2
+        user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
       args:
-        command: "python preprocess.py raw_input.csv"
-        output: "raw_input.csv"
+        url: "https://www.italiadomani.gov.it/content/dam/sogei-ng/opendata/OpenData_PNRR_QuadroFinProgrammazione.csv"
         filename: "raw_input.csv"
       primary: true
 

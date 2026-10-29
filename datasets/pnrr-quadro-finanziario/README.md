@@ -18,7 +18,7 @@ Anagrafica delle misure e submisure del PNRR con importi di programmazione: fina
 **Italia Domani** — MEF / SoGeI
 URL: https://www.italiadomani.gov.it/content/dam/sogei-ng/opendata/OpenData_PNRR_QuadroFinProgrammazione.csv
 Dimensione file: ~114 KB
-Download: `preprocess.py` (wget + fallback urllib)
+Download: `http_file` (toolkit; UA browser + proxy fallback in CI)
 
 ## Mart
 

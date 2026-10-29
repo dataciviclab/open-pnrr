@@ -1,5 +1,4 @@
 TOOLKIT = toolkit
-export TOOLKIT_ALLOW_SCRIPT_SOURCE = 1
 
 DATASETS := $(shell find datasets -name dataset.yml 2>/dev/null | sort)
 

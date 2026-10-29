@@ -21,6 +21,9 @@ jobs:
     with:
       repo-slug: "open-pnrr"
       run-command: "make run-all"
+      # Il server AEM/Akamai blocca i runner: HttpClient ritenta e all'ultimo
+      # tentativo ripiega sul proxy se BLOCKED_SOURCE_PROXY è configurato.
+      extra-env: "BLOCKED_SOURCE_PROXY=${{ vars.BLOCKED_SOURCE_PROXY }}"
     permissions:
       contents: write
       pull-requests: write
