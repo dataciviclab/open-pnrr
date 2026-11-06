@@ -8,11 +8,14 @@ from __future__ import annotations
 from pathlib import Path
 
 import streamlit as st
-
 from lab_connectors.duckdb.queries import (
     load_mart_table as _load_mart_table,
+)
+from lab_connectors.duckdb.queries import (
     query_clean as _query_clean,
 )
+from lab_connectors.formatters import fmt_eur as _fmt_eur
+from lab_connectors.formatters import fmt_num, fmt_pct  # noqa: F401  # re-export for pages
 
 try:
     from lab_connectors.duckdb.queries import detect_local_root
@@ -59,18 +62,6 @@ def load_mart(table: str, year: int = 2026):
     return _load_mart_table("pnrr_progetti", table, year, **kwargs)
 
 
-from lab_connectors.formatters import fmt_num, fmt_pct  # noqa: F401,E402  # re-export for pages
-
-
 def fmt_eur(val: float | int | None) -> str:
-    """Formatta importi in euro con abbreviazione: € 4.1 mld, € 571 mln."""
-    if val is None or val == 0:
-        return "€ 0"
-    abs_val = abs(val)
-    if abs_val >= 1_000_000_000:
-        return f"€ {val / 1_000_000_000:,.1f} mld".replace(",", ".")
-    if abs_val >= 1_000_000:
-        return f"€ {val / 1_000_000:,.0f} mln".replace(",", ".")
-    if abs_val >= 1_000:
-        return f"€ {val:,.0f}".replace(",", ".")
-    return f"€ {val:,.0f}"
+    """Formatta importi in euro con abbreviazione: € 4,1 mld, € 571 mln."""
+    return _fmt_eur(val, compact=True)
