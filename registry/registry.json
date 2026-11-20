@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repo": "open-pnrr",
   "source_repo": "dataciviclab/open-pnrr",
-  "updated_at": "2026-10-01",
+  "updated_at": "2026-11-20",
   "datasets": [
     {
       "slug": "pnrr_avanzamento_indicatori",
@@ -27,7 +27,8 @@
           "name": "missione",
           "type": "VARCHAR",
           "role": "dimension",
-          "description": ""
+          "description": "",
+          "semantic_type": "programma_code"
         },
         {
           "name": "descrizione_missione",
@@ -650,7 +651,8 @@
           "name": "missione",
           "type": "VARCHAR",
           "role": "dimension",
-          "description": ""
+          "description": "",
+          "semantic_type": "programma_code"
         },
         {
           "name": "descrizione_missione",
@@ -1064,7 +1066,8 @@
           "name": "missione",
           "type": "VARCHAR",
           "role": "dimension",
-          "description": ""
+          "description": "",
+          "semantic_type": "programma_code"
         },
         {
           "name": "descrizione_missione",
@@ -1453,7 +1456,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123123Z_9c6772b4",
+        "run_id": "20261120T094915Z_10ac70d7",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1469,11 +1472,11 @@
         "output_bytes": {
           "raw": 2768412,
           "clean": 35050,
-          "mart": 8111
+          "mart": 8092
         },
-        "started_at": "2026-10-01T12:31:23.833014+00:00",
-        "finished_at": "2026-10-01T12:31:26.515695+00:00",
-        "duration_seconds": 2.683
+        "started_at": "2026-11-20T09:49:15.860507+00:00",
+        "finished_at": "2026-11-20T09:49:18.506156+00:00",
+        "duration_seconds": 2.646
       }
     },
     {
@@ -1484,7 +1487,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123126Z_ff6055a9",
+        "run_id": "20261120T094918Z_ec3149c6",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1500,11 +1503,11 @@
         "output_bytes": {
           "raw": 111336940,
           "clean": 14173379,
-          "mart": 14218
+          "mart": 14176
         },
-        "started_at": "2026-10-01T12:31:26.568929+00:00",
-        "finished_at": "2026-10-01T12:31:33.287294+00:00",
-        "duration_seconds": 6.718
+        "started_at": "2026-11-20T09:49:18.564805+00:00",
+        "finished_at": "2026-11-20T09:49:29.438212+00:00",
+        "duration_seconds": 10.873
       }
     },
     {
@@ -1515,7 +1518,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123133Z_e419db2b",
+        "run_id": "20261120T094929Z_321e4997",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1531,11 +1534,11 @@
         "output_bytes": {
           "raw": 80151898,
           "clean": 3657351,
-          "mart": 20401
+          "mart": 20396
         },
-        "started_at": "2026-10-01T12:31:33.340513+00:00",
-        "finished_at": "2026-10-01T12:31:39.299449+00:00",
-        "duration_seconds": 5.959
+        "started_at": "2026-11-20T09:49:29.495693+00:00",
+        "finished_at": "2026-11-20T09:49:39.302644+00:00",
+        "duration_seconds": 9.807
       }
     },
     {
@@ -1546,7 +1549,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123139Z_c53783c5",
+        "run_id": "20261120T094939Z_47e88164",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1562,11 +1565,11 @@
         "output_bytes": {
           "raw": 40484686,
           "clean": 4615369,
-          "mart": 14318
+          "mart": 14304
         },
-        "started_at": "2026-10-01T12:31:39.354588+00:00",
-        "finished_at": "2026-10-01T12:31:50.295587+00:00",
-        "duration_seconds": 10.941
+        "started_at": "2026-11-20T09:49:39.360208+00:00",
+        "finished_at": "2026-11-20T09:49:46.918450+00:00",
+        "duration_seconds": 7.558
       }
     },
     {
@@ -1577,7 +1580,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123150Z_a37e47a2",
+        "run_id": "20261120T094946Z_2841fc9d",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1593,11 +1596,11 @@
         "output_bytes": {
           "raw": 317081316,
           "clean": 17138327,
-          "mart": 4122
+          "mart": 4127
         },
-        "started_at": "2026-10-01T12:31:50.354023+00:00",
-        "finished_at": "2026-10-01T12:32:06.836713+00:00",
-        "duration_seconds": 16.483
+        "started_at": "2026-11-20T09:49:46.979994+00:00",
+        "finished_at": "2026-11-20T09:50:16.263197+00:00",
+        "duration_seconds": 29.283
       }
     },
     {
@@ -1608,7 +1611,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123206Z_f47df44c",
+        "run_id": "20261120T095016Z_e9790e08",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1626,9 +1629,9 @@
           "clean": 25888,
           "mart": 2330
         },
-        "started_at": "2026-10-01T12:32:06.896393+00:00",
-        "finished_at": "2026-10-01T12:32:07.837551+00:00",
-        "duration_seconds": 0.941
+        "started_at": "2026-11-20T09:50:16.322170+00:00",
+        "finished_at": "2026-11-20T09:50:17.502869+00:00",
+        "duration_seconds": 1.181
       }
     },
     {
@@ -1639,7 +1642,7 @@
       "detail": "anno 2026 — mart: si",
       "action": "",
       "run": {
-        "run_id": "20261001T123207Z_78134d12",
+        "run_id": "20261120T095017Z_109106af",
         "year": 2026,
         "status": "SUCCESS",
         "quality_score": {
@@ -1657,9 +1660,9 @@
           "clean": 30822,
           "mart": 946
         },
-        "started_at": "2026-10-01T12:32:07.888558+00:00",
-        "finished_at": "2026-10-01T12:32:08.740418+00:00",
-        "duration_seconds": 0.852
+        "started_at": "2026-11-20T09:50:17.554975+00:00",
+        "finished_at": "2026-11-20T09:50:18.776252+00:00",
+        "duration_seconds": 1.221
       }
     }
   ],
@@ -1854,9 +1857,21 @@
         "label": "Programma",
         "datasets": [
           {
+            "slug": "pnrr_avanzamento_indicatori",
+            "name": "Pnrr Avanzamento Indicatori",
+            "column": "missione",
+            "semantic_type": "programma_code"
+          },
+          {
             "slug": "pnrr_progetti",
             "name": "Pnrr Progetti",
             "column": "programma",
+            "semantic_type": "programma_code"
+          },
+          {
+            "slug": "pnrr_progetti",
+            "name": "Pnrr Progetti",
+            "column": "missione",
             "semantic_type": "programma_code"
           },
           {
@@ -1864,10 +1879,16 @@
             "name": "Pnrr Quadro Finanziario",
             "column": "programma",
             "semantic_type": "programma_code"
+          },
+          {
+            "slug": "pnrr_quadro_finanziario",
+            "name": "Pnrr Quadro Finanziario",
+            "column": "missione",
+            "semantic_type": "programma_code"
           }
         ],
         "types": {
-          "programma_code": 2
+          "programma_code": 5
         }
       },
       "Target": {
@@ -1915,6 +1936,19 @@
       }
     },
     "bridges": [
+      {
+        "from": {
+          "entity": "Programma",
+          "dataset": "pnrr_avanzamento_indicatori",
+          "via": "programma_code"
+        },
+        "to": {
+          "entity": "Progetto",
+          "bridge": "opencoesione_progetti_esteso",
+          "on": "CUP",
+          "semantic_type": "cup_code"
+        }
+      },
       {
         "from": {
           "entity": "Indicatore",
