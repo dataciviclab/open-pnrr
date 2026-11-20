@@ -21,8 +21,8 @@ Tutti i progetti del Piano Nazionale di Ripresa e Resilienza (PNRR) con dettagli
 URL: https://www.italiadomani.gov.it/content/dam/sogei-ng/opendata/PNRR_Progetti.csv
 Dimensione file: ~317 MB
 Encoding: UTF-8 con BOM
-Download: `preprocess.py` (wget + fallback urllib) — il server AEM/Akamai
-blocca python-requests ma accetta wget (pattern verificato in CI)
+Download: `http_file` (toolkit) con UA browser; in CI fallback proxy
+`BLOCKED_SOURCE_PROXY` per il filtro AEM/Akamai.
 
 ## Mart
 

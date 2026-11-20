@@ -18,7 +18,7 @@ Avanzamento degli indicatori comuni europei per misura del PNRR: per ogni submis
 **Italia Domani** — MEF / SoGeI
 URL: https://www.italiadomani.gov.it/content/dam/sogei-ng/opendata/OpenData_PNRR_avanzamento_indicatori_comuni.csv
 Dimensione file: ~2-3 MB
-Download: `preprocess.py` (wget + fallback urllib)
+Download: `http_file` (toolkit; UA browser + proxy fallback in CI)
 
 ## Mart
 

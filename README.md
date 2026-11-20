@@ -51,7 +51,7 @@ I CSV originali sono sul [catalogo open data del MEF](https://www.italiadomani.g
 ## Pipeline
 
 ```text
-Italia Domani (CSV) → preprocess.py (wget) → raw → clean.sql → mart*.sql → GCS
+Italia Domani (CSV) → http_file (toolkit) → raw → clean.sql → mart*.sql → GCS
 ```
 
 ```bash
@@ -59,7 +59,7 @@ Italia Domani (CSV) → preprocess.py (wget) → raw → clean.sql → mart*.sql
 make run
 
 # Esegui un singolo dataset
-TOOLKIT_ALLOW_SCRIPT_SOURCE=1 toolkit run --config datasets/pnrr-progetti/dataset.yml
+toolkit run --config datasets/pnrr-progetti/dataset.yml
 
 # Valida
 toolkit validate --config datasets/pnrr-progetti/dataset.yml
@@ -79,4 +79,4 @@ toolkit validate --config datasets/pnrr-progetti/dataset.yml
 **Italia Domani** — MEF / SoGeI
 - [Catalogo open data](https://www.italiadomani.gov.it/content/sogei-ng/it/it/catalogo-open-data.html)
 - Licenza: dati pubblici (da verificare)
-- Il server AEM/Akamai blocca `python-requests` — i `preprocess.py` usano wget con fallback urllib
+- Il server AEM/Akamai richiede UA browser; in CI il download usa il fallback proxy `BLOCKED_SOURCE_PROXY`

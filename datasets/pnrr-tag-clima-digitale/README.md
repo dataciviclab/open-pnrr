@@ -19,7 +19,7 @@ TAG per il sostegno climatico e digitale per misura del PNRR: per ogni submisura
 **Italia Domani** — MEF / SoGeI
 URL: https://www.italiadomani.gov.it/content/dam/sogei-ng/opendata/TAG_sostegno_clima_digitale.csv
 Dimensione file: ~140 KB
-Download: `preprocess.py` (wget + fallback urllib)
+Download: `http_file` (toolkit; UA browser + proxy fallback in CI)
 
 ## Mart
 

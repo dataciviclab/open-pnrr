@@ -8,8 +8,7 @@ Questo repo contiene dataset aperti sul PNRR con pipeline raw → clean → mart
 
 ```
 datasets/<slug>/
-├── dataset.yml        # contratto pipeline
-├── preprocess.py      # download fonte (wget + fallback urllib)
+├── dataset.yml        # contratto pipeline (sorgente http_file)
 ├── sql/
 │   ├── clean.sql      # pulizia/typing (legge da raw_input)
 │   └── mart*.sql      # aggregazioni (legge da clean_input)
@@ -22,7 +21,7 @@ datasets/<slug>/
 
 1. Creare `datasets/<slug>/` con la struttura sopra
 2. Seguire `dataset.yml` come template (vedi `standards/pipeline.md`)
-3. Testare: `TOOLKIT_ALLOW_SCRIPT_SOURCE=1 toolkit run --config datasets/<slug>/dataset.yml`
+3. Testare: `toolkit run --config datasets/<slug>/dataset.yml`
 4. Validare: `toolkit validate --config datasets/<slug>/dataset.yml`
 5. Aprire PR
 

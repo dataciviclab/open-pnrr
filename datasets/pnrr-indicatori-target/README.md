@@ -19,7 +19,7 @@ Indicatori target dei progetti del PNRR: per ogni CUP-CLP, l'indicatore monitora
 **Italia Domani** — MEF / SoGeI
 URL: https://www.italiadomani.gov.it/content/dam/sogei-ng/opendata/PNRR_Indicatori_Target.csv
 Dimensione file: ~77-84 MB (aggiornato periodicamente)
-Download: `preprocess.py` (wget + fallback urllib)
+Download: `http_file` (toolkit; UA browser + proxy fallback in CI)
 
 ## Mart
 
