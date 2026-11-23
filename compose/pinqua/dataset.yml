@@ -1,0 +1,115 @@
+root: "../../out"
+schema_version: 1
+
+dataset:
+  name: "pinqua"
+  description: "PINQuA (PNRR M5C2I2.3): finanziato, appaltato e pagato per intervento, comune e regione. Compose mart-only su pnrr_progetti + pnrr_gare + pnrr_pagamenti + opencup_localizzazione."
+  source_id: "dataciviclab_composite"
+  tags: [housing, pnrr, pinqua, edilizia-pubblica, compose]
+  category: welfare-lavoro
+  years: [2026]
+  time_coverage:
+    mode: snapshot
+
+# Compose mart-only: niente raw, niente clean. Ogni mart legge i support che gli
+# servono. Il PINQuA e' identificato dal CUP, non dal codice misura: tra i dataset
+# il formato cambia (M5C2I2.3 in progetti, M5C2I2.03.01 in gare e pagamenti).
+#
+# ATTENZIONE alla temporalita': i support sono `external`, quindi leggono l'ultimo
+# artifact PUBBLICATO su GCS, non l'out/ del run corrente. Nel batch il compose gira
+# prima dei dataset (ordine alfabetico) e la sync avviene dopo: il compose pubblicato
+# riflette i support del ciclo precedente. E' il prezzo per farlo girare anche su una
+# PR che tocca solo compose/.
+support:
+  - name: progetti
+    type: external
+    repo: open-pnrr
+    slug: pnrr_progetti
+    layer: clean
+    years: [2026]
+  - name: gare
+    type: external
+    repo: open-pnrr
+    slug: pnrr_gare
+    layer: clean
+    years: [2026]
+  - name: pagamenti
+    type: external
+    repo: open-pnrr
+    slug: pnrr_pagamenti
+    layer: clean
+    years: [2026]
+  - name: localizzazione
+    type: external
+    repo: opere-pubbliche
+    slug: opencup_localizzazione
+    layer: clean
+    years: [2026]
+  - name: anac_aggiudicazioni
+    type: external
+    repo: appalti-pubblici
+    slug: anac_aggiudicazioni
+    layer: clean
+    years: [2026]
+  - name: anac_sal
+    type: external
+    repo: appalti-pubblici
+    slug: anac_stati_avanzamento
+    layer: clean
+    years: [2026]
+  - name: indicatori
+    type: external
+    repo: open-pnrr
+    slug: pnrr_indicatori_target
+    layer: clean
+    years: [2026]
+
+mart:
+  tables:
+    - name: "mart_pinqua_interventi"
+      sql: "sql/mart_pinqua_interventi.sql"
+    - name: "mart_pinqua_comuni"
+      sql: "sql/mart_pinqua_comuni.sql"
+    - name: "mart_pinqua_regioni"
+      sql: "sql/mart_pinqua_regioni.sql"
+    - name: "mart_pinqua_catena"
+      sql: "sql/mart_pinqua_catena.sql"
+    - name: "mart_pinqua_gare"
+      sql: "sql/mart_pinqua_gare.sql"
+    - name: "mart_pinqua_fisico"
+      sql: "sql/mart_pinqua_fisico.sql"
+  required_tables:
+    - "mart_pinqua_interventi"
+    - "mart_pinqua_comuni"
+    - "mart_pinqua_regioni"
+    - "mart_pinqua_catena"
+    - "mart_pinqua_gare"
+    - "mart_pinqua_fisico"
+  validate:
+    table_rules:
+      mart_pinqua_interventi:
+        primary_key: [cup, id_intervento]
+        required_columns: [cup, id_intervento, fin_pnrr, aggiudicato, pagato_pnrr]
+        min_rows: 900
+      mart_pinqua_comuni:
+        primary_key: [codice_comune]
+        required_columns: [codice_comune, comune, regione, interventi, fin_pnrr_quota]
+        min_rows: 250
+      mart_pinqua_regioni:
+        primary_key: [regione]
+        required_columns: [regione, interventi, fin_pnrr_quota]
+        min_rows: 15
+      mart_pinqua_catena:
+        required_columns: [finanziato_pnrr, aggiudicato_cig, aggiudicato_senza_cig, pagato_pnrr, pct_aggiudicato_cig]
+        min_rows: 1
+      mart_pinqua_gare:
+        primary_key: [cig]
+        required_columns: [cig, cup, importo_gara_pnrr, stato_sal]
+        min_rows: 5000
+      mart_pinqua_fisico:
+        primary_key: [cup]
+        required_columns: [cup, alloggi_erp_programmati, alloggi_erp_realizzati, pct_erp]
+        min_rows: 200
+
+validation:
+  fail_on_error: true
