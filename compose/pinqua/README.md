@@ -1,7 +1,7 @@
 # PINQuA — finanziato, appaltato, pagato
 
 Compose **mart-only** sul Programma Innovativo Nazionale per la Qualità dell'Abitare
-(PNRR **M5C2I2.3**). Nessun raw, nessun clean: quattro support esterni, quattro mart.
+(PNRR **M5C2I2.3**). Nessun raw, nessun clean: sette support esterni (tre PNRR, geografia OpenCUP, due ANAC, indicatori fisici), sei mart.
 
 ## Cosa risponde
 
@@ -37,28 +37,43 @@ sono separati proprio per non mescolare le due semantiche.
 
 `pnrr_indicatori_target` espone `valore_programmato` e `valore_realizzato` per CUP:
 
-| Indicatore | CUP | A zero | Programmato | Realizzato | % |
+| Indicatore | CUP con target | Di cui a zero | Programmato | Realizzato | % |
 |---|---:|---:|---:|---:|---:|
 | Alloggi ERP | 227 | **165 (73%)** | 9.997 | **3.391** | **33,9%** |
-| Alloggi ERS | 150 | 125 (83%) | 2.537 | 250 | 9,9% |
+| Alloggi ERS | 149 | 124 (83%) | 2.537 | 250 | 9,9% |
 | Posti studentati | 36 | 30 (83%) | 431 | 24 | 5,6% |
-| Spazi pubblici (mq) | 765 | 521 (68%) | 7,99 M | 1,62 M | 20,3% |
+| Spazi pubblici (mq) | 752 | 508 (68%) | 7,99 M | 1,62 M | 20,3% |
+
+I CUP sono distinti: `pnrr_indicatori_target` ha 765 righe per gli spazi pubblici ma 752
+comuni/CUP (13 righe duplicate, collassate dal `MAX()` del mart).
 
 **272 CUP con un target di alloggi non hanno consegnato un solo alloggio.** La consegna non è
-lenta e uniforme: è ferma quasi ovunque e concentrata in pochi CUP (51 hanno raggiunto il
-target). Il campo `stato_avanzamento` di `pnrr_progetti` sottostima: a fronte di 100 interventi
+lenta e uniforme: è ferma quasi ovunque e concentrata. **62 CUP** hanno consegnato almeno un
+alloggio ERP e valgono 3.391 unità; **51 hanno raggiunto il 100%** del target e ne valgono
+1.961. I due numeri non coincidono e non vanno sovrapposti. Il campo `stato_avanzamento` di `pnrr_progetti` sottostima: a fronte di 100 interventi
 "concluso" (2,5% delle risorse), il 34% degli alloggi ERP risulta realizzato.
 
 **Discrepanza sui mq**: la somma dei programmati per CUP è ~8,0 mln, il target di programma è
 800.000 mq. Il target è un pavimento, non la somma dei progetti: non confrontare i due numeri.
+
+## Nota temporale: il compose legge gli artifact pubblicati
+
+I support sono `type: external`: leggono l'ultima pubblicazione su GCS, non `out/` del run
+corrente. Nello stesso batch il compose viene eseguito **prima** dei dataset che riassume
+(`find datasets compose | sort` mette `compose/` davanti) e la sync avviene dopo. Quindi
+**il compose pubblicato riflette i support del ciclo precedente**, e si allinea al ciclo
+successivo. Non è un errore di SQL: è il prezzo di poter girare anche su una PR che tocca
+solo `compose/`. La correzione vera richiede un hook post-sync nel reusable di
+`dataciviclab/.github`; fino ad allora il lag è dichiarato qui.
 
 ## Caveat
 
 - **Join sul CUP, non sul codice misura**: la misura è `M5C2I2.3` in `pnrr_progetti` ma
   `M5C2I2.03.01` in `pnrr_gare` e `pnrr_pagamenti`.
 - **`aggiudicato` può superare `fin_pnrr`** per un singolo intervento: la gara copre il
-  contratto intero, il finanziamento PNRR solo la sua quota. A livello aggregato i due
-  coincidono (99,4%).
+  contratto intero, il finanziamento PNRR solo la sua quota. A livello aggregato la lettura
+  corretta è **82,4%** (2.093,2 / 2.540,8); il 99,4% è la somma per riga, gonfiata dai 157
+  CIG duplicati. Non usarlo.
 - **10 CUP su 909 sono multi-comune** (fino a 29): nei mart comunale e regionale i costi
   sono ripartiti in parti uguali, altrimenti la somma gonfia (3,69 vs 3,25 mld). I tre mart
   chiudono sullo stesso totale progetti, verificato nel run.

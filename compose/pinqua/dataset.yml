@@ -14,6 +14,12 @@ dataset:
 # Compose mart-only: niente raw, niente clean. Ogni mart legge i support che gli
 # servono. Il PINQuA e' identificato dal CUP, non dal codice misura: tra i dataset
 # il formato cambia (M5C2I2.3 in progetti, M5C2I2.03.01 in gare e pagamenti).
+#
+# ATTENZIONE alla temporalita': i support sono `external`, quindi leggono l'ultimo
+# artifact PUBBLICATO su GCS, non l'out/ del run corrente. Nel batch il compose gira
+# prima dei dataset (ordine alfabetico) e la sync avviene dopo: il compose pubblicato
+# riflette i support del ciclo precedente. E' il prezzo per farlo girare anche su una
+# PR che tocca solo compose/.
 support:
   - name: progetti
     type: external
