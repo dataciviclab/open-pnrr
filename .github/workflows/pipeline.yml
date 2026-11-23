@@ -5,6 +5,7 @@ on:
     types: [closed]
     paths:
       - "datasets/**"
+      - "compose/**"
   schedule:
     - cron: "0 6 1 * *"
   workflow_dispatch:
@@ -21,6 +22,10 @@ jobs:
     with:
       repo-slug: "open-pnrr"
       run-command: "make run-all"
+      # Al merge: solo i dataset/compose toccati dalla PR (batch.txt dal detect).
+      # Lo schedule resta su run-command (tutti).
+      detect-paths: "datasets compose"
+      run-batch-command: "make run-batch"
       # Il server AEM/Akamai blocca i runner: HttpClient ritenta e all'ultimo
       # tentativo ripiega sul proxy se BLOCKED_SOURCE_PROXY è configurato.
       extra-env: "BLOCKED_SOURCE_PROXY=${{ vars.BLOCKED_SOURCE_PROXY }}"
