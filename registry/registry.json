@@ -2,8 +2,36 @@
   "schema_version": 1,
   "repo": "open-pnrr",
   "source_repo": "dataciviclab/open-pnrr",
-  "updated_at": "2026-11-20",
+  "updated_at": "2026-11-23",
   "datasets": [
+    {
+      "slug": "pinqua",
+      "name": "Pinqua",
+      "description": "PINQuA (PNRR M5C2I2.3): finanziato, appaltato e pagato per intervento, comune e regione. Compose mart-only su pnrr_progetti + pnrr_gare + pnrr_pagamenti + opencup_localizzazione.",
+      "source": "",
+      "source_id": "dataciviclab_composite",
+      "period": {
+        "start": 2026,
+        "end": 2026
+      },
+      "tags": [
+        "housing",
+        "pnrr",
+        "pinqua",
+        "edilizia-pubblica",
+        "compose"
+      ],
+      "category": "welfare-lavoro",
+      "stage": "incubating",
+      "mart_refs": [
+        "pinqua__mart_pinqua_interventi",
+        "pinqua__mart_pinqua_comuni",
+        "pinqua__mart_pinqua_regioni",
+        "pinqua__mart_pinqua_catena",
+        "pinqua__mart_pinqua_gare",
+        "pinqua__mart_pinqua_fisico"
+      ]
+    },
     {
       "slug": "pnrr_avanzamento_indicatori",
       "name": "Pnrr Avanzamento Indicatori",
@@ -1317,6 +1345,66 @@
   ],
   "marts": [
     {
+      "slug": "pinqua__mart_pinqua_catena",
+      "dataset": "pinqua",
+      "table": "mart_pinqua_catena",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pinqua/2026/mart_pinqua_catena.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pinqua__mart_pinqua_comuni",
+      "dataset": "pinqua",
+      "table": "mart_pinqua_comuni",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pinqua/2026/mart_pinqua_comuni.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pinqua__mart_pinqua_fisico",
+      "dataset": "pinqua",
+      "table": "mart_pinqua_fisico",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pinqua/2026/mart_pinqua_fisico.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pinqua__mart_pinqua_gare",
+      "dataset": "pinqua",
+      "table": "mart_pinqua_gare",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pinqua/2026/mart_pinqua_gare.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pinqua__mart_pinqua_interventi",
+      "dataset": "pinqua",
+      "table": "mart_pinqua_interventi",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pinqua/2026/mart_pinqua_interventi.parquet",
+        "multi_file": false
+      }
+    },
+    {
+      "slug": "pinqua__mart_pinqua_regioni",
+      "dataset": "pinqua",
+      "table": "mart_pinqua_regioni",
+      "location": {
+        "type": "gcs",
+        "path": "gs://dataciviclab-mart/open-pnrr/pinqua/2026/mart_pinqua_regioni.parquet",
+        "multi_file": false
+      }
+    },
+    {
       "slug": "pnrr_avanzamento_indicatori__mart_per_missione",
       "dataset": "pnrr_avanzamento_indicatori",
       "table": "mart_per_missione",
@@ -1448,6 +1536,31 @@
     }
   ],
   "signals": [
+    {
+      "id": "compose:pinqua",
+      "source_id": "dataciviclab_composite",
+      "status": "ok",
+      "label": "pinqua",
+      "detail": "anno 2026 — mart: si",
+      "action": "",
+      "run": {
+        "run_id": "20261123T192701Z_b6f394a6",
+        "year": 2026,
+        "status": "SUCCESS",
+        "quality_score": {
+          "mart": 100
+        },
+        "output_rows": {
+          "mart": 7915
+        },
+        "output_bytes": {
+          "mart": 186185
+        },
+        "started_at": "2026-11-23T19:27:01.346034+00:00",
+        "finished_at": "2026-11-23T19:29:59.084492+00:00",
+        "duration_seconds": 177.738
+      }
+    },
     {
       "id": "pnrr_avanzamento_indicatori",
       "source_id": "italiadomani",
