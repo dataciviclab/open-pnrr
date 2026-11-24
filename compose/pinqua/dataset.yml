@@ -6,7 +6,7 @@ dataset:
   description: "PINQuA (PNRR M5C2I2.3): finanziato, appaltato e pagato per intervento, comune e regione. Compose mart-only su pnrr_progetti + pnrr_gare + pnrr_pagamenti + opencup_localizzazione."
   source_id: "dataciviclab_composite"
   tags: [housing, pnrr, pinqua, edilizia-pubblica, compose]
-  category: welfare-lavoro
+  category: finanza-pubblica
   years: [2026]
   time_coverage:
     mode: snapshot
